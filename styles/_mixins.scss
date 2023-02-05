@@ -1,0 +1,14 @@
+@mixin FlexMid($flex-direction: "") {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: $flex-direction;
+}
+@mixin Centreabsolute {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+//---------------------------------------------------

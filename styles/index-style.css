@@ -1,0 +1,420 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800|Open+Sans:300,400,600,700");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900;1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Roboto+Serif:opsz,wght@8..144,100;8..144,200;8..144,300;8..144,400;8..144,500;8..144,600;8..144,700;8..144,800;8..144,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@-webkit-keyframes bubbleanimation {
+  30% {
+    border-radius: 60% 50% 60% 50%/50% 60% 50% 60%;
+  }
+  50% {
+    border-radius: 70% 40% 70% 40%/40% 70% 40% 70%;
+  }
+  70% {
+    border-radius: 40% 60% 47% 53%/66% 29% 71% 34%;
+  }
+}
+@keyframes bubbleanimation {
+  30% {
+    border-radius: 60% 50% 60% 50%/50% 60% 50% 60%;
+  }
+  50% {
+    border-radius: 70% 40% 70% 40%/40% 70% 40% 70%;
+  }
+  70% {
+    border-radius: 40% 60% 47% 53%/66% 29% 71% 34%;
+  }
+}
+:root {
+  --main-transition-time: 15s;
+  --color-primary: #111;
+  --color-secondary: #dadada;
+  --color-third: hsl(197, 72%, 47%);
+  --font-family-primary: "Inter", serif;
+  --font-family-secondary: "Nunito", sans-serif;
+  --font-size-100: 0.875rem;
+  --font-size-200: 1.125rem;
+  --font-size-300: clamp(1.125rem, 2vw, 1.375rem);
+  --font-size-400: clamp(1.5rem, 2.5vw, 1.875rem);
+  --font-size-700: clamp(2rem, 4vw, 3rem);
+  --font-size-800: clamp(2.5rem, 10vw, 5.125rem);
+  --font-size-900: clamp(4rem, 15vw, 8.25rem);
+  --para-size-300: 30ch;
+  --para-size-400: 40ch;
+  --para-size-700: 75ch;
+  --para-size-900: 100ch;
+  --space-100: 0.625rem;
+  --space-200: 1.25rem;
+  --space-400: 2.5rem;
+  --space-500: 3.125rem;
+  --space-600: 3.75rem;
+  --space-700: 6.25rem;
+  --space-800: 9.375rem;
+  --space-header: clamp(1.25rem, 10vw, 6.25rem);
+}
+
+*, ::before, ::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family-primary);
+}
+
+/*
+html{
+    font-size: 62.5% !important;
+}
+*/
+ul li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+body {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+body .filter-black {
+  pointer-events: none;
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  background: rgba(0, 0, 0, 0);
+  transition: all 0.3s;
+  overflow-y: hidden;
+}
+body #cursor {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  z-index: 1;
+  /*
+  &:before{
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: radial-gradient(
+          circle 9em at 50vw 50vh,
+          rgba(0, 0, 0, 0),
+          yellow
+      );
+  }
+  */
+}
+body #cursor.display-flex {
+  display: flex;
+}
+body #cursor .flashlight {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+body #cursor .flashlight .bubble {
+  position: absolute;
+  bottom: 100px;
+  width: clamp(100px, 11vw, 20vw);
+  height: clamp(100px, 11vw, 20vw);
+  background: white;
+  border-radius: 50%;
+  border: black 3px dotted;
+  -webkit-animation: bubbleanimation 5s infinite ease-in-out;
+          animation: bubbleanimation 5s infinite ease-in-out;
+  filter: blur(15px);
+}
+body #cursor .flashlight .shine {
+  position: absolute;
+  top: -100px;
+  height: 100px;
+  width: 50px;
+  background: rgb(255, 255, 255);
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  filter: blur(10px);
+}
+body #cursor .flashlight img {
+  width: 100%;
+  height: 100%;
+}
+body .hero {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background: #dadada;
+  transition: background var(--main-transition-time);
+}
+body .hero .header {
+  position: absolute;
+  top: 0;
+  height: 60px;
+  width: 100%;
+  background: transparent;
+  transition: all 0.3s;
+}
+body .hero .header .container-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 100%;
+}
+body .hero .header .container-header .navbar-brand {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: row;
+  cursor: pointer;
+  mix-blend-mode: darken;
+  z-index: 1;
+}
+body .hero .header .container-header .navbar-brand img {
+  width: 40px;
+  margin-right: 10px;
+}
+body .hero .header .container-header .navbar-brand p {
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--color-primary);
+  font-family: "Montserrat", sans-serif;
+  transition: color var(--main-transition-time);
+  text-shadow: 2px 2px 8px black;
+}
+body .hero .header .container-header .navbar-line {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  font-size: 16px;
+  mix-blend-mode: darken;
+  z-index: 1;
+}
+body .hero .header .container-header .navbar-line a {
+  color: var(--color-primary);
+  font-family: var(--font-family-primary);
+  transition: color var(--main-transition-time);
+  text-shadow: 2px 2px 8px black;
+}
+body .hero .header .container-header .navbar-line li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: row;
+  position: relative;
+  height: 100%;
+  padding: 0 20px;
+}
+body .hero .header .container-header .navbar-line li ::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  height: 2px;
+  width: 0%;
+  background: black;
+  transition: width 0.4s ease;
+}
+body .hero .header .container-header .navbar-line li:hover a {
+  color: #333;
+}
+body .hero .header .container-header .navbar-line li:hover ::after {
+  width: 100%;
+}
+body .hero .header .container-header .mobile-nav {
+  display: none;
+  width: 40px;
+  height: 100%;
+}
+body .hero .header .container-header .mobile-nav:hover span {
+  width: 100% !important;
+}
+body .hero .header .container-header .mobile-nav a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+body .hero .header .container-header .mobile-nav a span {
+  height: 3px;
+  width: 100%;
+  display: block;
+  background: black;
+}
+body .hero .header .container-header .mobile-nav a span:nth-child(2) {
+  margin: 4px 0px 4px auto;
+  width: 75%;
+  transition: 0.3s all;
+}
+body .hero .header .container-header .mobile-nav a span:nth-child(3) {
+  margin-left: auto;
+  width: 45%;
+  transition: 0.6s all;
+}
+body .hero .header .left-part-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+  visibility: hidden;
+  align-items: flex-start;
+  width: 50%;
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 2;
+  transition: transform 0.3s ease;
+  padding: 28px 40px;
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  background: rgba(22, 140, 69, 0.4);
+}
+body .hero .header .left-part-slide .cross2 {
+  position: relative;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 20px;
+  right: 25px;
+  z-index: 10;
+  cursor: pointer;
+}
+body .hero .header .left-part-slide .cross2 img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+}
+body .hero .header .left-part-slide ul {
+  padding-bottom: 40%;
+  font-size: 16px;
+}
+body .hero .header .left-part-slide ul li {
+  position: relative;
+  padding: 15px 0px;
+  /*
+  &:nth-of-type(4){ //For active thing
+      a{
+          color: white;
+      }
+      ::after{
+          width: 100%;
+      }
+  }
+  */
+}
+body .hero .header .left-part-slide ul li ::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 0%;
+  height: 2px;
+  margin-bottom: 2px;
+  background: white;
+  transition: all 0.4s ease;
+}
+body .hero .header .left-part-slide ul li a {
+  color: white;
+  font-family: var(--font-family-secondary);
+}
+body .hero .header .left-part-slide ul li p {
+  color: white;
+}
+body .hero .header .left-part-slide ul li:hover ::after {
+  width: 100%;
+}
+body .hero .header .left-part-slide .contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: row;
+  margin-left: 10px;
+}
+body .hero .header .left-part-slide .contact-container img {
+  width: 15px;
+}
+body .hero .header .left-part-slide .contact-container img:first-child {
+  width: 10px;
+}
+body .hero .header .left-part-slide .contact-container img:nth-child(2) {
+  margin: 0px 20px;
+}
+body .hero .header .left-part-slide .right {
+  padding-top: 10px;
+}
+body .hero .header .left-part-slide .right p {
+  color: white;
+  font-size: 13px;
+  font-weight: 450;
+  font-family: var(--font-family-secondary);
+}
+body .hero .h1 {
+  font-size: 42px;
+  transition: color var(--main-transition-time);
+}
+body .hero .p1 {
+  font-size: 22px;
+  margin-bottom: 100px;
+  transition: color var(--main-transition-time);
+}
+body .hero .random-div {
+  position: absolute;
+  display: none;
+  mix-blend-mode: darken;
+  z-index: 1;
+}
+body .hero .random-div img {
+  width: 40px;
+}
+body .hero .random-div p {
+  font-size: 22px;
+  font-weight: 900;
+  margin: 50px;
+}
+body .hero .random-div.display-block {
+  display: block;
+}/*# sourceMappingURL=index-style.css.map */
