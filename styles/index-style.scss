@@ -1,8 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800|Open+Sans:300,400,600,700');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900;1000&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Roboto+Serif:opsz,wght@8..144,100;8..144,200;8..144,300;8..144,400;8..144,500;8..144,600;8..144,700;8..144,800;8..144,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 @import 
@@ -16,11 +12,6 @@
     box-sizing: border-box;
     font-family: var(--font-family-primary);
 }
-/*
-html{
-    font-size: 62.5% !important;
-}
-*/
 ul li{
 list-style: none;
 padding: 0;
@@ -132,6 +123,7 @@ body {
                 flex-direction: row;
                 justify-content: space-between;
                 height: 100%; 
+                margin: 0 10vw;
                 .navbar-brand{
                     position: relative;
                     @include FlexMid(row);
@@ -146,10 +138,8 @@ body {
                     p{
                         font-size: 32px;
                         font-weight: 600;
-                        color: var(--color-primary);
-                        font-family: 'Montserrat', sans-serif;
+                        color: black;
                         transition: color var(--main-transition-time);
-                        text-shadow: 2px 2px 8px black;
                     }
                 }
                 .navbar-line{
@@ -163,10 +153,9 @@ body {
                     mix-blend-mode: darken;
                     z-index: 1;
                     a{
-                        color: var(--color-primary);
+                        color: black;
                         font-family: var(--font-family-primary);
                         transition: color var(--main-transition-time);
-                        text-shadow: 2px 2px 8px black;
                     }
                     li{
                         @include FlexMid(row);
@@ -240,7 +229,7 @@ body {
                 transition: transform .3s ease;
                 padding: 28px 40px;
                 backdrop-filter: blur(20px);
-                background: #168c4566;
+                background: grey;
                 .cross2{
                     position: relative;
                     position: absolute;
@@ -341,7 +330,6 @@ body {
             p{
                 font-size: 22px;
                 font-weight: 900;
-                margin: 50px;
             }
             &.display-block{
                 display: block;
@@ -357,9 +345,33 @@ body {
     @media screen and (min-width: 770px) {
     }
     @media screen and (max-width: 768px) {
+        .hero{
+            .header{
+                .container-header{
+                    .navbar-line{
+                        display: none;
+                    }
+                    .mobile-nav{
+                        height: 100%;
+                        display: block;
+                    } 
+                }
+                .left-part-slide{
+                    visibility: visible;
+                    transform: translateX(100%);
+                }
+            }
+        }
     }
 
     //phones
     @media screen and (max-width: 575px) {
+        .hero{
+            .header{
+                .left-part-slide{
+                    width: 100%;
+                }
+            }
+        }
     }
 }

@@ -1,32 +1,10 @@
 :root {
     --main-transition-time: 15s;
 
-    --color-primary: #111;
-    --color-secondary: #dadada;
-    --color-third: hsl(197, 72%, 47%);
+    //--color-primary: #111;
+    //--color-secondary: #dadada;
+    //--color-third: ;
 
     --font-family-primary: 'Inter', serif;
     --font-family-secondary: 'Nunito', sans-serif;
-
-    --font-size-100: 0.875rem; // 16px
-    --font-size-200: 1.125rem; // 18px
-    --font-size-300: clamp(1.125rem, 2vw, 1.375rem); // 18-22px
-    --font-size-400: clamp(1.5rem, 2.5vw, 1.875rem); // 24-30px
-    --font-size-700: clamp(2rem, 4vw, 3rem); // 32-48px
-    --font-size-800: clamp(2.5rem, 10vw, 5.125rem); // 40-82px
-    --font-size-900: clamp(4rem, 15vw, 8.25rem); // 64-132px
-
-    --para-size-300: 30ch;
-    --para-size-400: 40ch;
-    --para-size-700: 75ch;
-    --para-size-900: 100ch;
-
-    --space-100: 0.625rem; // 10px
-    --space-200: 1.25rem; // 20px
-    --space-400: 2.5rem; // 40px
-    --space-500: 3.125rem; // 50px
-    --space-600: 3.75rem; // 60px
-    --space-700: 6.25rem; // 100px
-    --space-800: 9.375rem; // 200px
-    --space-header: clamp(1.25rem, 10vw, 6.25rem); // 20-100px
 }

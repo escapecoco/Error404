@@ -25,10 +25,12 @@ window.onload = function(){
         document.querySelector('.h1').style.display = "none";
         document.querySelector('.p1').style.display = "none";
         cursor.classList.add('display-flex');
+        for (e = 0; e < document.querySelectorAll('.hero .random-div').length; e++) {
+            document.querySelectorAll('.hero .random-div')[e].classList.add('display-block');
+        }
     }, "8000")
 }
 document.querySelector('.error').addEventListener('click', success);
-
 function success(){
     document.querySelector('.hero').style.background = "#dadada";
     document.querySelector('.h1').style.color = "black";
@@ -37,9 +39,6 @@ function success(){
         document.querySelector('.h1').style.display = "inline-block";
         document.querySelector('.p1').style.display = "inline-block";
         cursor.classList.remove('display-flex');
-        for (e = 0; e < document.querySelectorAll('.hero .random-div').length; e++) {
-            document.querySelectorAll('.hero .random-div')[e].classList.add('display-block');
-        }
     }, "8000");
 }
 
@@ -47,7 +46,7 @@ var randomdiv = document.querySelectorAll('.random-div');
 var winWidth = window.innerWidth;
 var winHeight = window.innerHeight;
 
-for ( var i=0; i < randomdiv.length; i++ ) {
+for ( var i = 0; i < randomdiv.length; i++ ) {
     var thisDiv = randomdiv[i];
     
     randomTop = getRandomNumber(0, winHeight);
@@ -58,4 +57,35 @@ for ( var i=0; i < randomdiv.length; i++ ) {
 }
 function getRandomNumber(min, max) { 
     return Math.random() * (max - min) + min;
+}
+
+
+const btnA = document.querySelector('.mobile-nav');
+const btnB = document.querySelector('.cross2');
+const slide = document.querySelector('.left-part-slide');
+const filterappear = document.querySelector('.filter-black');
+
+let togglebtn;
+
+btnA.addEventListener('click', sliderightmobile);
+btnB.addEventListener('click', crossclose);
+
+
+function sliderightmobile(){
+
+    if(!togglebtn) {
+        slide.style.setProperty("transform", "translate(0)", "important");
+        //slide.style.transform = "translate(0)"; Si sa ne marche pas
+        filterappear.style.background = "#00000060";
+        return;
+    }
+};
+
+function crossclose(){
+
+    if(!togglebtn) {
+        slide.style.transform = "translate(100%)";
+        filterappear.style.background = "#00000000";
+        return;
+    }
 }
