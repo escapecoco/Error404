@@ -6,6 +6,8 @@ Oups... Il y a une erreur, trouve la 404 !
 Project made with HTML5, SCSS/CSS3 and JAVASCRIPT
 Projet réalisé avec HTML, SCSS/CSS3 et JAVASCRIPT
 
-Designed at night with lot of stress..😨
+(Duration: 1 day)
+
+Designed at night with lot of stress..😨🤣
 
 *(Participation for the contest of Le Repaire du Web)*
